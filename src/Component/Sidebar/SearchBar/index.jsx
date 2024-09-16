@@ -3,7 +3,7 @@ import CommandMenu from "../CommandMenu";
 import { useState, useEffect } from "react";
 
 export const SearchBar = () => {
-	const [open, setOpen] = useState(true);
+	const [open, setOpen] = useState(false);
 	// Toggle the menu when ⌘K is pressed
 	useEffect(() => {
 		const down = (e) => {
