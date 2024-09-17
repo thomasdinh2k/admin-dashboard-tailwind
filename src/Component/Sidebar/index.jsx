@@ -2,6 +2,7 @@ import { AccountToggle } from "./AccountToggle";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { SearchBar } from "./SearchBar";
 import RouteSelect from "./RouteSelect";
+import Plan from "./Plan";
 
 export default function Sidebar() {
 	/* Height of the panel will be:
@@ -22,7 +23,7 @@ export default function Sidebar() {
 				<RouteSelect />
 			</div>
 
-			{/* [ ] Plan toggle */}
+			<Plan />
 		</div>
 	);
 }
