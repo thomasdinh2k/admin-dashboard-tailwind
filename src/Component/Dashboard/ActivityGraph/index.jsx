@@ -1,79 +1,88 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from "react";
 import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ReferenceLine,
-  ResponsiveContainer,
-} from 'recharts';
-import { FiUser } from 'react-icons/fi';
+	LineChart,
+	Line,
+	XAxis,
+	YAxis,
+	CartesianGrid,
+	Tooltip,
+	Legend,
+	ReferenceLine,
+	ResponsiveContainer,
+} from "recharts";
+import { FiUser } from "react-icons/fi";
 
 const data = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
+	{
+		name: "January",
+		Desktop: 4000,
+		Mobile: 2400,
+		Other: 2400,
+	},
+	{
+		name: "February",
+		Desktop: 3000,
+		Mobile: 1398,
+		Other: 2210,
+	},
+	{
+		name: "March",
+		Desktop: 2000,
+		Mobile: 9800,
+		Other: 2290,
+	},
+	{
+		name: "April",
+		Desktop: 2780,
+		Mobile: 3908,
+		Other: 2000,
+	},
+	{
+		name: "May",
+		Desktop: 1890,
+		Mobile: 4800,
+		Other: 2181,
+	},
+	{
+		name: "June",
+		Desktop: 2390,
+		Mobile: 3800,
+		Other: 2500,
+	},
+	{
+		name: "July",
+		Desktop: 3490,
+		Mobile: 4300,
+		Other: 2100,
+	},
 ];
 
 const ActivityGraph = () => {
-  return (
-    <div
-        className='col-span-8 overflow-hidden rounded border border-stone-300'
-        >
-        
-            <div className="p-4">
-                <h3 className='flex items-center gap-1.5 font-medium'>
-                    <FiUser /> Activity
-                </h3>
-            </div>
+	return (
+		<div className="col-span-8 overflow-hidden rounded border border-stone-300">
+			<div className="p-4">
+				<h3 className="flex items-center gap-1.5 font-medium">
+					<FiUser /> Activity
+				</h3>
+			</div>
 
-        {/* // [ ] Our Graph  */}
+			{/* // [ ] Our Graph  */}
+			<div className="h-64 px-4">
+			  <ResponsiveContainer width="100%" height="100%">
+          <LineChart width={500} height={300} data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" padding={{ left: 30, right: 30 }} className="text-xs"/>
+            <YAxis className="text-xs"/>
+            <Tooltip />
+            <Legend className="text-lg"/>
+            <Line type="monotone" dataKey="Mobile" stroke="#8884d8" activeDot={{ r: 8 }} />
+            <Line type="monotone" dataKey="Desktop" stroke="#82ca9d" />
+            <Line type="monotone" dataKey="Other" stroke="#2c2c2f" />
+          </LineChart>
+        </ResponsiveContainer>
+			</div>
+		</div>
+	);
+};
 
-
-    </div>
-  )
-}
-
-export default ActivityGraph
+export default ActivityGraph;
