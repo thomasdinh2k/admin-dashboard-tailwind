@@ -66,7 +66,7 @@ const ActivityGraph = () => {
 				</h3>
 			</div>
 
-			{/* // [ ] Our Graph  */}
+			{/* // [x] Graphs  */}
 			<div className="h-64 px-4">
 			  <ResponsiveContainer width="100%" height="100%">
           <LineChart width={500} height={300} data={data}>
